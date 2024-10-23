@@ -32,7 +32,7 @@ const upload = multer({ storage: storage });
 app.use(bodyParser.json());
 
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://mohammadaskarie78632:wtzycRUjrhyrUDdc@cluster0.lujnk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0&tls=true', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb+srv://mohammadaskarie78632:wtzycRUjrhyrUDdc@cluster0.lujnk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0&tls=true&tlsAllowInvalidCertificates=true&tlsInsecure=true', { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 db.on('error', (error) => console.error('Connection error:', error));
 db.once('open', () => console.log('Connected to Database'));
